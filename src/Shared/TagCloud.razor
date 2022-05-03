@@ -1,0 +1,12 @@
+﻿@if (this.TagCould.Count > 0)
+{
+	<div class="col-lg-4 cold-md-2 mx-auto">
+		<h4>Tag Cloud</h4>
+		<ul class="cloud" role="navigation" aria-label="tag cloud">
+			@foreach (var cat in this.TagCould)
+			{
+				<li><a href="/category/@(Uri.EscapeUriString(@cat.Key))" data-weight="@cat.Value.Weight" data-postcount="@cat.Value.PostCount" title="View all blog posts for the category @cat.Key">@cat.Key</a></li>
+			}
+		</ul>
+	</div>
+}

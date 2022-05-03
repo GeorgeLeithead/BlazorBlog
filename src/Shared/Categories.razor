@@ -1,0 +1,15 @@
+﻿@if (CategoryArray is null)
+{
+	return;
+}
+
+@if (CategoryArray.Count > 0)
+{
+	<span class="cloudtag">Tags:</span>
+	<ul class="cloud cat-links" role="navigation" aria-label="tag cloud">
+		@foreach (string cat in CategoryArray)
+		{
+			<li><a href="/category/@(Uri.EscapeDataString(@cat))" data-weight="5" title="View all blog posts for the category @cat">@cat</a></li>
+		}
+	</ul>
+}
